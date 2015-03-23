@@ -12,8 +12,8 @@ class RecordedAudio : NSObject {
     var filePathUrl: NSURL!
     var title: String!
     
-    override init() {
-        self.filePathUrl = nil
-        self.title = ""
+    init(filePathUrl: NSURL, title: String) {
+        self.filePathUrl = filePathUrl
+        self.title = title
     }
 }

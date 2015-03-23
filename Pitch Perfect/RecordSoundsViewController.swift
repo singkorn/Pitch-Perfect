@@ -61,9 +61,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if(flag) {
             // Set recorded audio
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
             
             // Move to next scene
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
@@ -87,6 +85,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.hidden = true
         stopButton.hidden = true
         pressStopLabel.hidden = true
+        pressMicLabel.hidden = false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
