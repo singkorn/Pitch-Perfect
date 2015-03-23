@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nKr-IL-5PF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nKr-IL-5PF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press stop button to stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-02-joM">
+                                <rect key="frame" x="202" y="422" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67a-3I-yo4" userLabel="recordButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="microphone">
@@ -60,17 +66,29 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press mic to begin recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-5n-JTG">
+                                <rect key="frame" x="190" y="393" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Kqi-02-joM" secondAttribute="centerX" id="4DS-xf-rI5"/>
                             <constraint firstAttribute="centerX" secondItem="Hzv-pA-Kgv" secondAttribute="centerX" id="53v-wO-jdc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NL5-5n-JTG" secondAttribute="bottom" constant="173" id="7Fs-s1-8pZ"/>
+                            <constraint firstAttribute="centerY" secondItem="Kqi-02-joM" secondAttribute="centerY" constant="-132.5" id="SdB-HF-jtc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kqi-02-joM" secondAttribute="bottom" constant="157" id="UMS-Yf-Rkv"/>
                             <constraint firstItem="KU6-io-TDH" firstAttribute="top" secondItem="67a-3I-yo4" secondAttribute="bottom" constant="8" symbolic="YES" id="ayX-FV-Qmo"/>
                             <constraint firstAttribute="centerX" secondItem="67a-3I-yo4" secondAttribute="centerX" id="bb1-og-4wD"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Hzv-pA-Kgv" secondAttribute="bottom" constant="93" id="kcK-8o-qkR">
                                 <variation key="widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="KU6-io-TDH" firstAttribute="centerX" secondItem="67a-3I-yo4" secondAttribute="centerX" id="p7m-jV-eek"/>
+                            <constraint firstAttribute="centerY" secondItem="Kqi-02-joM" secondAttribute="centerY" constant="-132.5" id="pMV-W8-jiB"/>
                             <constraint firstAttribute="centerY" secondItem="67a-3I-yo4" secondAttribute="centerY" id="pQS-iB-foY"/>
+                            <constraint firstAttribute="centerX" secondItem="NL5-5n-JTG" secondAttribute="centerX" id="uuj-Pf-yse"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -79,12 +97,12 @@
                                 <exclude reference="KU6-io-TDH"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="kcK-8o-qkR"/>
                                 <exclude reference="ayX-FV-Qmo"/>
                                 <exclude reference="p7m-jV-eek"/>
                                 <exclude reference="bb1-og-4wD"/>
                                 <exclude reference="pQS-iB-foY"/>
                                 <exclude reference="53v-wO-jdc"/>
+                                <exclude reference="kcK-8o-qkR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -94,17 +112,19 @@
                                 <include reference="KU6-io-TDH"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="kcK-8o-qkR"/>
                                 <include reference="ayX-FV-Qmo"/>
                                 <include reference="p7m-jV-eek"/>
                                 <include reference="bb1-og-4wD"/>
                                 <include reference="pQS-iB-foY"/>
                                 <include reference="53v-wO-jdc"/>
+                                <include reference="kcK-8o-qkR"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="DUC-X4-AaX"/>
                     <connections>
+                        <outlet property="pressMicLabel" destination="NL5-5n-JTG" id="Lsf-pN-YLD"/>
+                        <outlet property="pressStopLabel" destination="Kqi-02-joM" id="uQV-nG-u0y"/>
                         <outlet property="recordButton" destination="67a-3I-yo4" id="At3-RI-xz9"/>
                         <outlet property="recordingInProgress" destination="KU6-io-TDH" id="WMz-TE-L1o"/>
                         <outlet property="stopButton" destination="Hzv-pA-Kgv" id="Tkt-rZ-09g"/>
@@ -195,16 +215,16 @@
                                 <exclude reference="xPU-Ra-14R"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5QH-gp-2UV"/>
-                                <exclude reference="lWs-zb-VIH"/>
+                                <exclude reference="4do-Q4-lRG"/>
+                                <exclude reference="Cb5-fN-sYF"/>
+                                <exclude reference="aN9-RP-Btt"/>
                                 <exclude reference="EAd-gu-uas"/>
                                 <exclude reference="rQA-8D-SqO"/>
                                 <exclude reference="1yb-qG-FXo"/>
                                 <exclude reference="EXp-mh-lsN"/>
-                                <exclude reference="Cb5-fN-sYF"/>
-                                <exclude reference="aN9-RP-Btt"/>
+                                <exclude reference="5QH-gp-2UV"/>
+                                <exclude reference="lWs-zb-VIH"/>
                                 <exclude reference="HKS-fm-HlM"/>
-                                <exclude reference="4do-Q4-lRG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -216,16 +236,16 @@
                                 <include reference="xPU-Ra-14R"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5QH-gp-2UV"/>
-                                <include reference="lWs-zb-VIH"/>
+                                <include reference="4do-Q4-lRG"/>
+                                <include reference="Cb5-fN-sYF"/>
+                                <include reference="aN9-RP-Btt"/>
                                 <include reference="EAd-gu-uas"/>
                                 <include reference="rQA-8D-SqO"/>
                                 <include reference="1yb-qG-FXo"/>
                                 <include reference="EXp-mh-lsN"/>
-                                <include reference="Cb5-fN-sYF"/>
-                                <include reference="aN9-RP-Btt"/>
+                                <include reference="5QH-gp-2UV"/>
+                                <include reference="lWs-zb-VIH"/>
                                 <include reference="HKS-fm-HlM"/>
-                                <include reference="4do-Q4-lRG"/>
                             </mask>
                         </variation>
                     </view>

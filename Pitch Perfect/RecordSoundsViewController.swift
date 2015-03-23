@@ -14,6 +14,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var pressMicLabel: UILabel!
+    @IBOutlet weak var pressStopLabel: UILabel!
     
     var audioRecorder: AVAudioRecorder!
     var recordedAudio: RecordedAudio!
@@ -32,6 +34,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.hidden = false
         stopButton.hidden = false
         recordButton.enabled = false
+        pressMicLabel.hidden = true
+        pressStopLabel.hidden = false
         
         //TODO: Record user's voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
@@ -71,7 +75,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func stopRecording(sender: UIButton) {
-        recordingInProgress.hidden = true
         recordButton.enabled = true
         stopButton.hidden = true
         
@@ -83,6 +86,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(animated: Bool) {
         recordingInProgress.hidden = true
         stopButton.hidden = true
+        pressStopLabel.hidden = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
